@@ -1,7 +1,7 @@
 {
 	"name": "webvimark/module-user-management",
 	"description": "User with improved RBAC",
-	"type": "yii2-extention",
+	"type": "yii2-extension",
 	"autoload": {
 		"psr-4": {
 			"webvimark\\modules\\UserManagement\\": ""
