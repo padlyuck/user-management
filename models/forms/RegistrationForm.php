@@ -88,7 +88,7 @@ class RegistrationForm extends Model
 			return false;
 		}
 
-		$user = new User();
+		$user = Yii::createObject(Yii::$app->user->identityClass);
 		$user->password = $this->password;
 
 		if ( Yii::$app->getModule('user-management')->useEmailAsLogin )
