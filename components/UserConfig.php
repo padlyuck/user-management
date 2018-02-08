@@ -59,4 +59,11 @@ class UserConfig extends User
 		parent::afterLogin($identity, $cookieBased, $duration);
 	}
 
+    public function can($permissionName, $params = [], $allowCaching = true)
+    {
+        if($this->getIsSuperadmin()){
+            return true;
+        }
+        return parent::can($permissionName, $params, $allowCaching);
+    }
 }
