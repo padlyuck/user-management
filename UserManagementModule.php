@@ -287,9 +287,9 @@ class UserManagementModule extends \yii\base\Module
 			if (is_array($adminEmail) && ArrayHelper::isAssociative($adminEmail)) {
 				$this->mailerOptions['from'] = $adminEmail;
 			} else {
-				$this->mailerOptions['from'] = array_map(function ($email) {
+				$this->mailerOptions['from'] = array_merge(...array_map(function ($email) {
 					return [$email => Yii::$app->name . ' robot'];
-				}, (array)$adminEmail);
+				}, (array)$adminEmail));
 			}
 		}
 
